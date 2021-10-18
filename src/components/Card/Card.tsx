@@ -2,12 +2,11 @@ import React from "react";
 
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 import water from "../../assets/images/water.png";
 
-import { StyledGrid } from "./styles";
+import { StyledCard } from "./styles";
 
 interface IDefaultProps {
   cardTitle: string;
@@ -15,7 +14,7 @@ interface IDefaultProps {
 
 export const Card: React.FC<IDefaultProps> = ({ cardTitle }) => {
   return (
-    <StyledGrid item xs={12}>
+    <StyledCard>
       <CardMedia
         component="img"
         height="140"
@@ -30,6 +29,6 @@ export const Card: React.FC<IDefaultProps> = ({ cardTitle }) => {
           Water to choose from
         </Typography>
       </CardContent>
-    </StyledGrid>
+    </StyledCard>
   );
 };

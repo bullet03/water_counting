@@ -1,10 +1,9 @@
 import * as React from "react";
 
-import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
 import { styled } from "@mui/material/styles";
 
-export const StyledGrid = styled(Grid)({
-  boxShadow: "1",
+export const StyledCard = styled(Card)({
   backgroundColor: "aliceblue",
-  width: 33,
+  width: "50%",
 });
