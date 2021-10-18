@@ -1,15 +1,16 @@
 import React from "react";
 
 import AddIcon from "@mui/icons-material/Add";
-import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
+
+import { StyledBox } from "./styles";
 
 export const Button = () => {
   return (
-    <Box sx={{ "& > :not(style)": { m: 1 } }}>
+    <StyledBox sx={{ "& > :not(style)": { m: 1 }, float: "right" }}>
       <Fab color="primary" aria-label="add">
         <AddIcon />
       </Fab>
-    </Box>
+    </StyledBox>
   );
 };
