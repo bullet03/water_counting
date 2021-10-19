@@ -14,10 +14,11 @@ import { StyledCard } from "./styles";
 
 interface IDefaultProps {
   cardTitle: string;
+  setDrinksData: () => void;
 }
 
-export const Card: React.FC<IDefaultProps> = ({ cardTitle }) => {
-  const [mls, setMls] = useState(300);
+export const Card: React.FC<IDefaultProps> = ({ cardTitle, setDrinksData }) => {
+  const [ml, setMl] = useState(300);
   return (
     <StyledCard>
       <CardMedia
@@ -25,8 +26,8 @@ export const Card: React.FC<IDefaultProps> = ({ cardTitle }) => {
         image={coffee}
         alt="coffee"
         sx={{
-          height: "54px",
-          width: "84px",
+          height: "44px",
+          width: "54px",
           boxSizing: "border-box",
           paddingLeft: "10px",
         }}
@@ -35,18 +36,26 @@ export const Card: React.FC<IDefaultProps> = ({ cardTitle }) => {
         <Typography variant="body2" component="div">
           {cardTitle}
         </Typography>
-        <Typography variant="body2">{mls} ml</Typography>
+        <Typography variant="body2">{ml} ml</Typography>
       </CardContent>
       <CardActions>
         <IconButton
-          size="small"
-          sx={{ border: "2px solid #808080", borderRadius: "5px" }}
+          sx={{
+            width: "30px",
+            height: "30px",
+            border: "2px solid #808080",
+            borderRadius: "5px",
+          }}
         >
           <EditIcon />
         </IconButton>
         <IconButton
-          size="small"
-          sx={{ border: "2px solid #808080", borderRadius: "5px" }}
+          sx={{
+            width: "30px",
+            height: "30px",
+            border: "2px solid #808080",
+            borderRadius: "5px",
+          }}
         >
           <DeleteIcon />
         </IconButton>

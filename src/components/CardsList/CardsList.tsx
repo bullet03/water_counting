@@ -7,12 +7,16 @@ import { Card } from "../Card";
 
 import { StyledGridItem } from "./styles";
 
-export const CardsList = () => {
+interface IDefaultProps {
+  setDrinksData: () => void;
+}
+
+export const CardsList: React.FC<IDefaultProps> = ({ setDrinksData }) => {
   return (
     <Grid container spacing={2}>
       {cardsData.map((cardTitle) => (
         <StyledGridItem item xs={12}>
-          <Card cardTitle={cardTitle} />
+          <Card cardTitle={cardTitle} setDrinksData={setDrinksData} />
         </StyledGridItem>
       ))}
     </Grid>
