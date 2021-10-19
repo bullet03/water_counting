@@ -1,10 +1,14 @@
 import React from "react";
 
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 
-import water from "../../assets/images/water.png";
+import coffee from "../../assets/images/coffee.png";
 
 import { StyledCard } from "./styles";
 
@@ -17,18 +21,37 @@ export const Card: React.FC<IDefaultProps> = ({ cardTitle }) => {
     <StyledCard>
       <CardMedia
         component="img"
-        height="140"
-        image={water}
-        alt="water splash"
+        image={coffee}
+        alt="coffee"
+        sx={{
+          height: "54px",
+          width: "84px",
+          boxSizing: "border-box",
+          paddingLeft: "10px",
+        }}
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+      <CardContent sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <Typography variant="body2" component="div">
           {cardTitle}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           Water to choose from
         </Typography>
       </CardContent>
+      <CardActions>
+        <IconButton
+          size="small"
+          sx={{ border: "2px solid #808080", borderRadius: "5px" }}
+        >
+          <EditIcon />
+        </IconButton>
+        <IconButton
+          size="small"
+          sx={{ border: "2px solid #808080", borderRadius: "5px" }}
+        >
+          <DeleteIcon />
+        </IconButton>
+      </CardActions>
     </StyledCard>
   );
 };

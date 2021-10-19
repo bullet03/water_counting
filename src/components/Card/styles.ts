@@ -6,4 +6,7 @@ import { styled } from "@mui/material/styles";
 export const StyledCard = styled(Card)({
   backgroundColor: "aliceblue",
   width: "50%",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
 });
