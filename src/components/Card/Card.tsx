@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
@@ -17,6 +17,7 @@ interface IDefaultProps {
 }
 
 export const Card: React.FC<IDefaultProps> = ({ cardTitle }) => {
+  const [mls, setMls] = useState(300);
   return (
     <StyledCard>
       <CardMedia
@@ -34,9 +35,7 @@ export const Card: React.FC<IDefaultProps> = ({ cardTitle }) => {
         <Typography variant="body2" component="div">
           {cardTitle}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Water to choose from
-        </Typography>
+        <Typography variant="body2">{mls} ml</Typography>
       </CardContent>
       <CardActions>
         <IconButton

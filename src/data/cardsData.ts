@@ -1,1 +1,1 @@
-export const cardsData = ["first", "second", "third"];
+export const cardsData = ["coffee", "tea", "water"];
