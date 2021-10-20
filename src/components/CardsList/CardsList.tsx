@@ -3,6 +3,7 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 
 import { cardsData } from "../../data/cardsData";
+import drinkDataModel from "../../models/drinkDataModel";
 import { Card } from "../Card";
 
 import { StyledGridItem } from "./styles";
@@ -10,7 +11,7 @@ import { StyledGridItem } from "./styles";
 interface IDefaultProps {
   deleteDrinkItem: () => void;
   editDrinkItem: () => void;
-  drinksData
+  drinksData: drinkDataModel[];
 }
 
 export const CardsList: React.FC<IDefaultProps> = ({
@@ -20,10 +21,10 @@ export const CardsList: React.FC<IDefaultProps> = ({
 }) => {
   return (
     <Grid container spacing={2}>
-      {drinksData.map((cardTitle) => (
+      {drinksData.map((drinksItem) => (
         <StyledGridItem item xs={12}>
           <Card
-            cardTitle={cardTitle}
+            cardTitle={drinksItem.title}
             deleteDrinkItem={deleteDrinkItem}
             editDrinkItem={editDrinkItem}
           />
