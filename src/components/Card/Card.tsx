@@ -14,14 +14,16 @@ import { StyledCard } from "./styles";
 
 interface IDefaultProps {
   cardTitle: string;
-  deleteDrinkItem: () => void;
+  deleteDrinkItem: (id: number) => void;
   editDrinkItem: () => void;
+  index: number;
 }
 
 export const Card: React.FC<IDefaultProps> = ({
   cardTitle,
   deleteDrinkItem,
   editDrinkItem,
+  index,
 }) => {
   const [ml, setMl] = useState(300);
   return (
@@ -56,7 +58,7 @@ export const Card: React.FC<IDefaultProps> = ({
           <EditIcon />
         </IconButton>
         <IconButton
-          onClick={deleteDrinkItem}
+          onClick={() => deleteDrinkItem(index + 1)}
           sx={{
             width: "30px",
             height: "30px",

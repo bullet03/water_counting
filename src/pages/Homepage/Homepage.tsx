@@ -11,7 +11,9 @@ import { StyledContainer } from "./styles";
 export const Homepage = () => {
   const [drinksData, setDrinksData] = useState(cardsData);
 
-  const deleteDrinkItem = () => {
+  const deleteDrinkItem = (id: number) => {
+    const filtered = drinksData.filter((drinkItem) => drinkItem.id !== id);
+    setDrinksData(filtered);
     console.log("heeey");
   };
 

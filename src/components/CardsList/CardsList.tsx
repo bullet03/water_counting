@@ -8,7 +8,7 @@ import { Card } from "../Card";
 import { StyledGridItem } from "./styles";
 
 interface IDefaultProps {
-  deleteDrinkItem: () => void;
+  deleteDrinkItem: (id: number) => void;
   editDrinkItem: () => void;
   drinksData: drinkDataModel[];
 }
@@ -20,12 +20,13 @@ export const CardsList: React.FC<IDefaultProps> = ({
 }) => {
   return (
     <Grid container spacing={2}>
-      {drinksData.map((drinksItem) => (
+      {drinksData.map((drinksItem, index) => (
         <StyledGridItem item xs={12} key={drinksItem.id}>
           <Card
             cardTitle={drinksItem.title}
             deleteDrinkItem={deleteDrinkItem}
             editDrinkItem={editDrinkItem}
+            index={index}
           />
         </StyledGridItem>
       ))}
