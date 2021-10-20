@@ -10,15 +10,17 @@ import { StyledGridItem } from "./styles";
 interface IDefaultProps {
   deleteDrinkItem: () => void;
   editDrinkItem: () => void;
+  drinksData
 }
 
 export const CardsList: React.FC<IDefaultProps> = ({
   deleteDrinkItem,
   editDrinkItem,
+  drinksData,
 }) => {
   return (
     <Grid container spacing={2}>
-      {cardsData.map((cardTitle) => (
+      {drinksData.map((cardTitle) => (
         <StyledGridItem item xs={12}>
           <Card
             cardTitle={cardTitle}

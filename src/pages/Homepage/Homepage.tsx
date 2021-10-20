@@ -26,6 +26,7 @@ export const Homepage = () => {
       <CardsList
         deleteDrinkItem={deleteDrinkItem}
         editDrinkItem={editDrinkItem}
+        drinksData={drinksData}
       />
       <Button />
     </StyledContainer>
