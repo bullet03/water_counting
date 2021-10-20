@@ -14,10 +14,15 @@ import { StyledCard } from "./styles";
 
 interface IDefaultProps {
   cardTitle: string;
-  setDrinksData: () => void;
+  deleteDrinkItem: () => void;
+  editDrinkItem: () => void;
 }
 
-export const Card: React.FC<IDefaultProps> = ({ cardTitle, setDrinksData }) => {
+export const Card: React.FC<IDefaultProps> = ({
+  cardTitle,
+  deleteDrinkItem,
+  editDrinkItem,
+}) => {
   const [ml, setMl] = useState(300);
   return (
     <StyledCard>
@@ -40,6 +45,7 @@ export const Card: React.FC<IDefaultProps> = ({ cardTitle, setDrinksData }) => {
       </CardContent>
       <CardActions>
         <IconButton
+          onClick={editDrinkItem}
           sx={{
             width: "30px",
             height: "30px",
@@ -50,6 +56,7 @@ export const Card: React.FC<IDefaultProps> = ({ cardTitle, setDrinksData }) => {
           <EditIcon />
         </IconButton>
         <IconButton
+          onClick={deleteDrinkItem}
           sx={{
             width: "30px",
             height: "30px",

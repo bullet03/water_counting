@@ -10,11 +10,23 @@ import { StyledContainer } from "./styles";
 
 export const Homepage = () => {
   const [drinksData, setDrinksData] = useState(cardsData);
+
+  const deleteDrinkItem = () => {
+    console.log("heeey");
+  };
+
+  const editDrinkItem = () => {
+    console.log("heeey");
+  };
+
   return (
     <StyledContainer maxWidth="sm" sx={{ backgroundColor: "#99C48E" }}>
       <Data />
       {/* <ProgressBar /> */}
-      <CardsList setDrinksData={setDrinksData} />
+      <CardsList
+        deleteDrinkItem={deleteDrinkItem}
+        editDrinkItem={editDrinkItem}
+      />
       <Button />
     </StyledContainer>
   );
