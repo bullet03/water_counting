@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 
 import coffee from "../../assets/images/coffee.png";
 
-import { StyledCard } from "./styles";
+import { StyledCard, StyledCardMedia } from "./styles";
 
 interface IDefaultProps {
   cardTitle: string;
