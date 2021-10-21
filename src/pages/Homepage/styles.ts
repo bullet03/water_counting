@@ -8,4 +8,5 @@ export const StyledContainer = styled(Container)({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
+  backgroundColor: "#99C48E",
 });
