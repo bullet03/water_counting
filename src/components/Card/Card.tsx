@@ -32,6 +32,13 @@ export const Card: React.FC<IDefaultProps> = ({
   index,
 }) => {
   const [ml, setMl] = useState(300);
+  const [isInputDisabled, setIsInputDisabled] = useState(true);
+
+  const editDrink = () => {
+    setIsInputDisabled(!isInputDisabled);
+    editDrinkItem();
+  };
+
   return (
     <StyledCard>
       <CardMedia
@@ -47,14 +54,24 @@ export const Card: React.FC<IDefaultProps> = ({
       />
       <StyledCardContent>
         <Typography variant="body2" component="div">
-          <TextField label={cardTitle} id="cardTitle" variant="standard" />
+          <TextField
+            label={cardTitle}
+            id="cardTitle"
+            variant="standard"
+            disabled={isInputDisabled}
+          />
         </Typography>
         <Typography variant="body2">
-          <TextField label={`${ml} ml`} id="drink-ml" variant="standard" />
+          <TextField
+            label={`${ml} ml`}
+            id="drink-ml"
+            variant="standard"
+            disabled={isInputDisabled}
+          />
         </Typography>
       </StyledCardContent>
       <CardActions>
-        <StyledIconButton onClick={editDrinkItem}>
+        <StyledIconButton onClick={editDrink}>
           <EditIcon />
         </StyledIconButton>
         <StyledIconButton onClick={() => deleteDrinkItem(index)}>
