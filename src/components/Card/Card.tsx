@@ -58,7 +58,7 @@ export const Card: React.FC<IDefaultProps> = ({
           <EditIcon />
         </IconButton>
         <IconButton
-          onClick={() => deleteDrinkItem(index + 1)}
+          onClick={() => deleteDrinkItem(index)}
           sx={{
             width: "30px",
             height: "30px",

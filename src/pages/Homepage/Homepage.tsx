@@ -12,9 +12,8 @@ export const Homepage = () => {
   const [drinksData, setDrinksData] = useState(cardsData);
 
   const deleteDrinkItem = (id: number) => {
-    const filtered = drinksData.filter((drinkItem) => drinkItem.id !== id);
+    const filtered = drinksData.filter((drinkItem, index) => index !== id);
     setDrinksData(filtered);
-    console.log("heeey");
   };
 
   const editDrinkItem = () => {
