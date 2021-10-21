@@ -10,7 +10,12 @@ import Typography from "@mui/material/Typography";
 
 import coffee from "../../assets/images/coffee.png";
 
-import { StyledCard, StyledCardMedia, StyledCardContent } from "./styles";
+import {
+  StyledCard,
+  StyledCardMedia,
+  StyledCardContent,
+  StyledIconButton,
+} from "./styles";
 
 interface IDefaultProps {
   cardTitle: string;
@@ -46,28 +51,12 @@ export const Card: React.FC<IDefaultProps> = ({
         <Typography variant="body2">{ml} ml</Typography>
       </StyledCardContent>
       <CardActions>
-        <IconButton
-          onClick={editDrinkItem}
-          sx={{
-            width: "30px",
-            height: "30px",
-            border: "2px solid #808080",
-            borderRadius: "5px",
-          }}
-        >
+        <StyledIconButton onClick={editDrinkItem}>
           <EditIcon />
-        </IconButton>
-        <IconButton
-          onClick={() => deleteDrinkItem(index)}
-          sx={{
-            width: "30px",
-            height: "30px",
-            border: "2px solid #808080",
-            borderRadius: "5px",
-          }}
-        >
+        </StyledIconButton>
+        <StyledIconButton onClick={() => deleteDrinkItem(index)}>
           <DeleteIcon />
-        </IconButton>
+        </StyledIconButton>
       </CardActions>
     </StyledCard>
   );
