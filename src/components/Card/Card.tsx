@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 
 import coffee from "../../assets/images/coffee.png";
 
-import { StyledCard, StyledCardMedia } from "./styles";
+import { StyledCard, StyledCardMedia, StyledCardContent } from "./styles";
 
 interface IDefaultProps {
   cardTitle: string;
@@ -39,12 +39,12 @@ export const Card: React.FC<IDefaultProps> = ({
           paddingLeft: "10px",
         }}
       />
-      <CardContent sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+      <StyledCardContent>
         <Typography variant="body2" component="div">
           {cardTitle}
         </Typography>
         <Typography variant="body2">{ml} ml</Typography>
-      </CardContent>
+      </StyledCardContent>
       <CardActions>
         <IconButton
           onClick={editDrinkItem}
