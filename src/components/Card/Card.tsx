@@ -6,6 +6,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import IconButton from "@mui/material/IconButton";
+import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
 import coffee from "../../assets/images/coffee.png";
@@ -46,9 +47,11 @@ export const Card: React.FC<IDefaultProps> = ({
       />
       <StyledCardContent>
         <Typography variant="body2" component="div">
-          {cardTitle}
+          <TextField label={cardTitle} id="cardTitle" variant="standard" />
         </Typography>
-        <Typography variant="body2">{ml} ml</Typography>
+        <Typography variant="body2">
+          <TextField label={`${ml} ml`} id="drink-ml" variant="standard" />
+        </Typography>
       </StyledCardContent>
       <CardActions>
         <StyledIconButton onClick={editDrinkItem}>
