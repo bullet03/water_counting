@@ -10,7 +10,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
 import coffee from "../../assets/images/coffee.png";
-import DrinkDataModel from "../../models/drinkDataModel";
+import DrinkItemDataModel from "../../models/drinkItemDataModel";
 
 import {
   StyledCard,
@@ -20,7 +20,7 @@ import {
 } from "./styles";
 
 interface IDefaultProps {
-  drinksItem: DrinkDataModel;
+  drinksItem: DrinkItemDataModel;
   deleteDrinkItem: (id: number) => void;
   editDrinkItem: () => void;
 }
