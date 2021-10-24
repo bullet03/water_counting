@@ -10,6 +10,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
 import coffee from "../../assets/images/coffee.png";
+import DrinkDataModel from "../../models/drinkDataModel";
 
 import {
   StyledCard,
@@ -19,19 +20,19 @@ import {
 } from "./styles";
 
 interface IDefaultProps {
-  cardTitle: string;
+  drinksItem: DrinkDataModel;
   deleteDrinkItem: (id: number) => void;
   editDrinkItem: () => void;
-  index: number;
 }
 
+const MOCK_DRINK_AMOUNT = 300;
+
 export const Card: React.FC<IDefaultProps> = ({
-  cardTitle,
+  drinksItem,
   deleteDrinkItem,
   editDrinkItem,
-  index,
 }) => {
-  const [ml, setMl] = useState(300);
+  const [ml, setMl] = useState(MOCK_DRINK_AMOUNT);
   const [isInputDisabled, setIsInputDisabled] = useState(true);
 
   const editDrink = () => {
@@ -55,7 +56,7 @@ export const Card: React.FC<IDefaultProps> = ({
       <StyledCardContent>
         <Typography variant="body2" component="div">
           <TextField
-            label={cardTitle}
+            label={drinksItem.title}
             id="cardTitle"
             variant="standard"
             disabled={isInputDisabled}
@@ -74,7 +75,7 @@ export const Card: React.FC<IDefaultProps> = ({
         <StyledIconButton onClick={editDrink}>
           <EditIcon />
         </StyledIconButton>
-        <StyledIconButton onClick={() => deleteDrinkItem(index)}>
+        <StyledIconButton onClick={() => deleteDrinkItem(drinksItem.id)}>
           <DeleteIcon />
         </StyledIconButton>
       </CardActions>

@@ -2,7 +2,7 @@ import * as React from "react";
 
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
+import CardMedia, { CardMediaProps } from "@mui/material/CardMedia";
 import IconButton from "@mui/material/IconButton";
 import { styled } from "@mui/material/styles";
 
@@ -14,7 +14,7 @@ export const StyledCard = styled(Card)({
   alignItems: "center",
 });
 
-export const StyledCardMedia = styled(CardMedia)({
+export const StyledCardMedia = styled(CardMedia)<CardMediaProps>({
   height: "44px",
   width: "54px",
   boxSizing: "border-box",

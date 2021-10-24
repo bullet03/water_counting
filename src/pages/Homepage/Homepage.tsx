@@ -1,34 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { CardsList } from "../../components/CardsList";
 import { Data } from "../../components/Data";
 import { ProgressBar } from "../../components/ProgressBar";
 import { Button } from "../../components/UI/Button";
-import { cardsData } from "../../data/cardsData";
 
 import { StyledContainer } from "./styles";
 
 export const Homepage = () => {
-  const [drinksData, setDrinksData] = useState(cardsData);
-
-  const deleteDrinkItem = (id: number) => {
-    const filtered = drinksData.filter((drinkItem, index) => index !== id);
-    setDrinksData(filtered);
-  };
-
-  const editDrinkItem = () => {
-    console.log("heeey");
-  };
-
   return (
-    <StyledContainer maxWidth="sm" sx={{ backgroundColor: "#99C48E" }}>
+    <StyledContainer maxWidth="sm">
       <Data />
       {/* <ProgressBar /> */}
-      <CardsList
-        deleteDrinkItem={deleteDrinkItem}
-        editDrinkItem={editDrinkItem}
-        drinksData={drinksData}
-      />
+      <CardsList />
       <Button />
     </StyledContainer>
   );

@@ -1,32 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Grid from "@mui/material/Grid";
 
-import drinkDataModel from "../../models/drinkDataModel";
+import { cardsData } from "../../data/cardsData";
 import { Card } from "../Card";
 
 import { StyledGridItem } from "./styles";
 
-interface IDefaultProps {
-  deleteDrinkItem: (id: number) => void;
-  editDrinkItem: () => void;
-  drinksData: drinkDataModel[];
-}
+export const CardsList = () => {
+  const [drinksData, setDrinksData] = useState(cardsData);
 
-export const CardsList: React.FC<IDefaultProps> = ({
-  deleteDrinkItem,
-  editDrinkItem,
-  drinksData,
-}) => {
+  const deleteDrinkItem = (id: number) => {
+    const filtered = drinksData.filter((drinkItem) => drinkItem.id !== id);
+    setDrinksData(filtered);
+  };
+
+  const editDrinkItem = () => {
+    console.log("heeey");
+  };
+
   return (
     <Grid container spacing={2}>
-      {drinksData.map((drinksItem, index) => (
+      {drinksData.map((drinksItem) => (
         <StyledGridItem item xs={12} key={drinksItem.id}>
           <Card
-            cardTitle={drinksItem.title}
+            drinksItem={drinksItem}
             deleteDrinkItem={deleteDrinkItem}
             editDrinkItem={editDrinkItem}
-            index={index}
           />
         </StyledGridItem>
       ))}
