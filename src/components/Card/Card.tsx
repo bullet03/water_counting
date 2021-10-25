@@ -9,7 +9,6 @@ import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
-import coffee from "../../assets/images/coffee.png";
 import DrinkItemDataModel from "../../models/drinkItemDataModel";
 
 import {
@@ -41,7 +40,7 @@ export const Card: React.FC<IDefaultProps> = ({
     <StyledCard>
       <CardMedia
         component="img"
-        image={coffee}
+        image={drinksItem.imageHref}
         alt="coffee"
         sx={{
           height: "44px",
