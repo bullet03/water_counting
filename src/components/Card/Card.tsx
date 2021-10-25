@@ -21,7 +21,7 @@ import {
 
 interface IDefaultProps {
   drinksItem: DrinkItemDataModel;
-  deleteDrinkItem: (id: number) => void;
+  deleteDrinkItem: (id: string) => void;
   editDrinkItem: () => void;
 }
 

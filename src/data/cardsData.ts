@@ -1,5 +1,7 @@
+import { nanoid } from "@reduxjs/toolkit";
+
 export const cardsData = [
-  { title: "coffee", id: 1435 },
-  { title: "tea", id: 34567 },
-  { title: "water", id: 457633 },
+  { title: "coffee", id: nanoid() },
+  { title: "tea", id: nanoid() },
+  { title: "water", id: nanoid() },
 ];

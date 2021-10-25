@@ -1,6 +1,6 @@
 type DrinkItemDataModel = {
   title: string;
-  id: number;
+  id: string;
 };
 
 export default DrinkItemDataModel;

@@ -10,7 +10,7 @@ import { StyledGridItem } from "./styles";
 export const CardsList = () => {
   const [drinksData, setDrinksData] = useState(cardsData);
 
-  const deleteDrinkItem = (id: number) => {
+  const deleteDrinkItem = (id: string) => {
     const filtered = drinksData.filter((drinkItem) => drinkItem.id !== id);
     setDrinksData(filtered);
   };
