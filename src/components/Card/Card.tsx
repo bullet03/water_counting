@@ -25,14 +25,11 @@ interface IDefaultProps {
   editDrinkItem: () => void;
 }
 
-const MOCK_DRINK_AMOUNT = 300;
-
 export const Card: React.FC<IDefaultProps> = ({
   drinksItem,
   deleteDrinkItem,
   editDrinkItem,
 }) => {
-  const [ml, setMl] = useState(MOCK_DRINK_AMOUNT);
   const [isInputDisabled, setIsInputDisabled] = useState(true);
 
   const editDrink = () => {
@@ -64,7 +61,7 @@ export const Card: React.FC<IDefaultProps> = ({
         </Typography>
         <Typography variant="body2">
           <TextField
-            label={`${ml} ml`}
+            label={`${drinksItem.ml} ml`}
             id="drink-ml"
             variant="standard"
             disabled={isInputDisabled}
