@@ -6,7 +6,7 @@ import CardActions from "@mui/material/CardActions";
 import CardMedia from "@mui/material/CardMedia";
 import TextField from "@mui/material/TextField";
 
-import DrinkItemDataModel from "../../models/drinkItemDataModel";
+import DrinkItemModel from "../../models/drinkItemModel";
 
 import {
   StyledCard,
@@ -16,7 +16,7 @@ import {
 } from "./styles";
 
 interface IDefaultProps {
-  drinksItem: DrinkItemDataModel;
+  drinksItem: DrinkItemModel;
   deleteDrinkItem: (id: string) => void;
   editDrinkItem: () => void;
 }
@@ -28,6 +28,8 @@ export const Card: React.FC<IDefaultProps> = ({
 }) => {
   const [isInputDisabled, setIsInputDisabled] = useState(true);
 
+  const { title, imageHref } = drinksItem.drink;
+
   const editDrink = () => {
     setIsInputDisabled(!isInputDisabled);
     editDrinkItem();
@@ -35,20 +37,10 @@ export const Card: React.FC<IDefaultProps> = ({
 
   return (
     <StyledCard>
-      <CardMedia
-        component="img"
-        image={drinksItem.imageHref}
-        alt="coffee"
-        sx={{
-          height: "44px",
-          width: "54px",
-          boxSizing: "border-box",
-          paddingLeft: "10px",
-        }}
-      />
+      <StyledCardMedia image={imageHref} />
       <StyledCardContent>
         <TextField
-          label={drinksItem.title}
+          label={title}
           id="cardTitle"
           variant="standard"
           disabled={isInputDisabled}
