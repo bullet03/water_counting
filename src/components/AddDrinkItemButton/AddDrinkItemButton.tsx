@@ -5,7 +5,7 @@ import Fab from "@mui/material/Fab";
 
 import { StyledBox } from "./styles";
 
-export const Button = () => {
+export const AddDrinkItemButton = () => {
   return (
     <StyledBox sx={{ "& > :not(style)": { m: 1 }, float: "right" }}>
       <Fab color="primary" aria-label="add">

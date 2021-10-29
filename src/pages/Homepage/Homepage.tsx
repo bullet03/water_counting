@@ -1,10 +1,10 @@
 import React from "react";
 
+import { AddDrinkItemButton } from "../../components/AddDrinkItemButton";
 import { AddDrinkItemModal } from "../../components/AddDrinkItemModal";
 import { CardsList } from "../../components/CardsList";
 import { Data } from "../../components/Data";
 import { ProgressBar } from "../../components/ProgressBar";
-import { Button } from "../../components/UI/Button";
 
 import { StyledContainer } from "./styles";
 
@@ -14,7 +14,7 @@ export const Homepage = () => {
       <Data />
       <ProgressBar />
       <CardsList />
-      <Button />
+      <AddDrinkItemButton />
       <AddDrinkItemModal />
     </StyledContainer>
   );
