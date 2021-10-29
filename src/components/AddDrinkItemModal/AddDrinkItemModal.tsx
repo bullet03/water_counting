@@ -12,7 +12,7 @@ import TextField from "@mui/material/TextField";
 
 export const AddDrinkItemModal = () => {
   return (
-    <Dialog open={true}>
+    <Dialog open={false}>
       <DialogTitle>Subscribe</DialogTitle>
       <DialogContent>
         <DialogContentText>Some awesome text</DialogContentText>

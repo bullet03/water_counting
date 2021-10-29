@@ -7,7 +7,7 @@ import { StyledBox } from "./styles";
 
 export const AddDrinkItemButton = () => {
   return (
-    <StyledBox sx={{ "& > :not(style)": { m: 1 }, float: "right" }}>
+    <StyledBox>
       <Fab color="primary" aria-label="add">
         <AddIcon />
       </Fab>
