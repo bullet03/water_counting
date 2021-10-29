@@ -15,10 +15,10 @@ export const StyledCard = styled(Card)({
 });
 
 export const StyledCardMedia = styled(CardMedia)<CardMediaProps>({
-  height: "44px",
-  width: "54px",
+  height: "60px",
+  width: "120px",
   boxSizing: "border-box",
-  paddingLeft: "10px",
+  paddingLeft: "40px",
 });
 
 export const StyledCardContent = styled(CardContent)({
