@@ -28,7 +28,7 @@ export const Card: React.FC<IDefaultProps> = ({
 }) => {
   const [isInputDisabled, setIsInputDisabled] = useState(true);
 
-  const { title, imageHref } = drinksItem.drink;
+  const { title, imageSrc } = drinksItem.drink;
 
   const editDrink = () => {
     setIsInputDisabled(!isInputDisabled);
@@ -37,7 +37,7 @@ export const Card: React.FC<IDefaultProps> = ({
 
   return (
     <StyledCard>
-      <StyledCardMedia image={imageHref} />
+      <StyledCardMedia image={imageSrc} />
       <StyledCardContent>
         <TextField
           label={title}

@@ -1,7 +1,7 @@
 type DrinkModel = {
   title: string;
   id: string;
-  imageHref: string;
+  imageSrc: string;
 };
 
 export default DrinkModel;

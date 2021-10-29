@@ -9,16 +9,16 @@ export const cardsData: DrinkItemModel[] = [
   {
     ml: 300,
     id: nanoid(),
-    drink: { imageHref: coffee, title: "coffee", id: nanoid() },
+    drink: { imageSrc: coffee, title: "coffee", id: nanoid() },
   },
   {
     ml: 300,
     id: nanoid(),
-    drink: { imageHref: tea, title: "tea", id: nanoid() },
+    drink: { imageSrc: tea, title: "tea", id: nanoid() },
   },
   {
     ml: 300,
     id: nanoid(),
-    drink: { imageHref: soda, title: "soda", id: nanoid() },
+    drink: { imageSrc: soda, title: "soda", id: nanoid() },
   },
 ];
