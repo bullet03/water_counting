@@ -12,9 +12,13 @@ import TextField from "@mui/material/TextField";
 
 interface IProps {
   isModalOpen: boolean;
+  toggleModal: () => void;
 }
 
-export const AddDrinkItemModal: React.FC<IProps> = ({ isModalOpen }) => {
+export const AddDrinkItemModal: React.FC<IProps> = ({
+  isModalOpen,
+  toggleModal,
+}) => {
   return (
     <Dialog open={isModalOpen}>
       <DialogTitle>Subscribe</DialogTitle>
@@ -29,7 +33,7 @@ export const AddDrinkItemModal: React.FC<IProps> = ({ isModalOpen }) => {
         <TextField />
       </DialogContent>
       <DialogActions>
-        <Button>Cancel</Button>
+        <Button onClick={toggleModal}>Cancel</Button>
         <Button>Save</Button>
       </DialogActions>
     </Dialog>

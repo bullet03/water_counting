@@ -11,7 +11,6 @@ import { StyledContainer } from "./styles";
 export const Homepage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleModal = () => {
-    console.log(isModalOpen);
     setIsModalOpen(!isModalOpen);
   };
 
@@ -21,7 +20,7 @@ export const Homepage = () => {
       <ProgressBar />
       <CardsList />
       <AddDrinkItemButton toggleModal={toggleModal} />
-      <AddDrinkItemModal isModalOpen={isModalOpen} />
+      <AddDrinkItemModal isModalOpen={isModalOpen} toggleModal={toggleModal} />
     </StyledContainer>
   );
 };
