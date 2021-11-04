@@ -1,7 +1,6 @@
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import FormControl from "@mui/material/FormControl";
@@ -9,6 +8,8 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
+
+import { StyledDialogContent } from "./styles";
 
 interface IProps {
   isModalOpen: boolean;
@@ -22,16 +23,18 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
   return (
     <Dialog open={isModalOpen}>
       <DialogTitle>Subscribe</DialogTitle>
-      <DialogContent>
+      <StyledDialogContent>
         <DialogContentText>Some awesome text</DialogContentText>
         <FormControl>
           <InputLabel></InputLabel>
           <Select>
-            <MenuItem></MenuItem>
+            <MenuItem>coffee</MenuItem>
+            <MenuItem>tea</MenuItem>
+            <MenuItem>water</MenuItem>
           </Select>
         </FormControl>
         <TextField />
-      </DialogContent>
+      </StyledDialogContent>
       <DialogActions>
         <Button onClick={toggleModal}>Cancel</Button>
         <Button>Save</Button>
