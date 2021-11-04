@@ -6,6 +6,7 @@ import { styled } from "@mui/material/styles";
 
 export const StyledBox = styled(Box)({
   width: "55%",
+  margin: "15px 0",
 });
 
 export const StyledLinearProgress = styled(LinearProgress)({
