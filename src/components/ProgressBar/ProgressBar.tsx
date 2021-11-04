@@ -1,12 +1,11 @@
 import React from "react";
 
-import Box from "@mui/material/Box";
-import LinearProgress from "@mui/material/LinearProgress";
+import { StyledBox, StyledLinearProgress } from "./styles";
 
 export const ProgressBar = () => {
   return (
-    <Box>
-      <LinearProgress variant="determinate" value={50} />
-    </Box>
+    <StyledBox>
+      <StyledLinearProgress variant="determinate" value={50} />
+    </StyledBox>
   );
 };
