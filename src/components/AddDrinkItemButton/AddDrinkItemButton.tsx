@@ -5,11 +5,15 @@ import Fab from "@mui/material/Fab";
 
 import { StyledBox } from "./styles";
 
-export const AddDrinkItemButton = () => {
+interface IProps {
+  toggleModal: () => void;
+}
+
+export const AddDrinkItemButton: React.FC<IProps> = ({ toggleModal }) => {
   return (
     <StyledBox>
       <Fab color="primary" aria-label="add">
-        <AddIcon />
+        <AddIcon onClick={toggleModal} />
       </Fab>
     </StyledBox>
   );

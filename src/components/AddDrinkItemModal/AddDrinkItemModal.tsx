@@ -10,9 +10,13 @@ import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 
-export const AddDrinkItemModal = () => {
+interface IProps {
+  isModalOpen: boolean;
+}
+
+export const AddDrinkItemModal: React.FC<IProps> = ({ isModalOpen }) => {
   return (
-    <Dialog open={false}>
+    <Dialog open={isModalOpen}>
       <DialogTitle>Subscribe</DialogTitle>
       <DialogContent>
         <DialogContentText>Some awesome text</DialogContentText>

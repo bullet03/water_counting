@@ -10,13 +10,18 @@ import { StyledContainer } from "./styles";
 
 export const Homepage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => {
+    console.log(isModalOpen);
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <StyledContainer maxWidth="sm">
       <Data />
       <ProgressBar />
       <CardsList />
-      <AddDrinkItemButton />
-      {isModalOpen && <AddDrinkItemModal />}
+      <AddDrinkItemButton toggleModal={toggleModal} />
+      <AddDrinkItemModal isModalOpen={isModalOpen} />
     </StyledContainer>
   );
 };
