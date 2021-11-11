@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
@@ -9,8 +11,12 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
+import { nanoid } from "@reduxjs/toolkit";
 
-import { StyledDialogContent } from "./styles";
+import coffee from "../../assets/images/coffee.png";
+import { cardsData } from "../../data/cardsData";
+
+import { StyledDialogContent, StyledBox } from "./styles";
 
 interface IProps {
   isModalOpen: boolean;
@@ -21,6 +27,12 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
   isModalOpen,
   toggleModal,
 }) => {
+  const [drinksData, setDrinksData] = useState(cardsData);
+
+  const editDrinkItem = () => {
+    console.log("g");
+  };
+
   return (
     <Dialog open={isModalOpen}>
       <DialogTitle>Subscribe</DialogTitle>
@@ -34,16 +46,18 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
             <MenuItem>water</MenuItem>
           </Select>
         </FormControl>
-        <Box sx={{ display: "flex", gap: "15px", alignItems: "center" }}>
+        <StyledBox>
           <TextField sx={{ width: "50%" }} />
           <InputLabel>ml</InputLabel>
-        </Box>
+        </StyledBox>
       </StyledDialogContent>
       <DialogActions>
         <Button variant="outlined" onClick={toggleModal}>
           Decline
         </Button>
-        <Button variant="outlined">Accept</Button>
+        <Button variant="outlined" onClick={editDrinkItem}>
+          Accept
+        </Button>
       </DialogActions>
     </Dialog>
   );
