@@ -40,8 +40,10 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
         </Box>
       </StyledDialogContent>
       <DialogActions>
-        <Button onClick={toggleModal}>Decline</Button>
-        <Button>Accept</Button>
+        <Button variant="outlined" onClick={toggleModal}>
+          Decline
+        </Button>
+        <Button variant="outlined">Accept</Button>
       </DialogActions>
     </Dialog>
   );
