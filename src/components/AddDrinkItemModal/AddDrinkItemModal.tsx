@@ -16,7 +16,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import coffee from "../../assets/images/coffee.png";
 import { cardsData } from "../../data/cardsData";
 
-import { StyledDialogContent, StyledBox } from "./styles";
+import { StyledDialogContent, StyledBox, StyledTextField } from "./styles";
 
 interface IProps {
   isModalOpen: boolean;
@@ -47,7 +47,7 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
           </Select>
         </FormControl>
         <StyledBox>
-          <TextField sx={{ width: "50%" }} />
+          <StyledTextField />
           <InputLabel>ml</InputLabel>
         </StyledBox>
       </StyledDialogContent>
