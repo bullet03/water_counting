@@ -1,3 +1,4 @@
+import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -24,7 +25,7 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
     <Dialog open={isModalOpen}>
       <DialogTitle>Subscribe</DialogTitle>
       <StyledDialogContent>
-        <DialogContentText>Some awesome text</DialogContentText>
+        <DialogContentText>Add drinking</DialogContentText>
         <FormControl>
           <InputLabel></InputLabel>
           <Select>
@@ -33,11 +34,14 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
             <MenuItem>water</MenuItem>
           </Select>
         </FormControl>
-        <TextField />
+        <Box sx={{ display: "flex", gap: "15px", alignItems: "center" }}>
+          <TextField sx={{ width: "50%" }} />
+          <InputLabel>ml</InputLabel>
+        </Box>
       </StyledDialogContent>
       <DialogActions>
-        <Button onClick={toggleModal}>Cancel</Button>
-        <Button>Save</Button>
+        <Button onClick={toggleModal}>Decline</Button>
+        <Button>Accept</Button>
       </DialogActions>
     </Dialog>
   );
