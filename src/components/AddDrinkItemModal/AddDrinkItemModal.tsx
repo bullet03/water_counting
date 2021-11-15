@@ -28,10 +28,14 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
   toggleModal,
 }) => {
   const [drinksData, setDrinksData] = useState(cardsData);
-  const [drinkItem, setDrinkItem] = useState({})
+  const [drinkItem, setDrinkItem] = useState({});
 
   const editDrinkItem = () => {
     console.log("g");
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDrinkItem({ ...drinkItem, drink: { title: e.target.value } });
   };
 
   return (
@@ -48,7 +52,7 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
           </Select>
         </FormControl>
         <StyledBox>
-          <StyledTextField />
+          <StyledTextField value={drinkItem.drink.title} onChange={(e) => handleChange(e)} />
           <InputLabel>ml</InputLabel>
         </StyledBox>
       </StyledDialogContent>
