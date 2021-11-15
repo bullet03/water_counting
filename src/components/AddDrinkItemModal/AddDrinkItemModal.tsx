@@ -28,6 +28,7 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
   toggleModal,
 }) => {
   const [drinksData, setDrinksData] = useState(cardsData);
+  const [drinkItem, setDrinkItem] = useState({})
 
   const editDrinkItem = () => {
     console.log("g");
