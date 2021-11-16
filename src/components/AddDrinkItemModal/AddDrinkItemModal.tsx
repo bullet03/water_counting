@@ -15,6 +15,7 @@ import { nanoid } from "@reduxjs/toolkit";
 
 import coffee from "../../assets/images/coffee.png";
 import { cardsData } from "../../data/cardsData";
+import DrinkItemModal from "../../models/drinkItemModel";
 
 import { StyledDialogContent, StyledBox, StyledTextField } from "./styles";
 
@@ -28,7 +29,10 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
   toggleModal,
 }) => {
   const [drinksData, setDrinksData] = useState(cardsData);
-  const [drinkItem, setDrinkItem] = useState({});
+  const [drinkItem, setDrinkItem] = useState<DrinkItemModal>({
+    id: "dfdf",
+    ml: 400,
+  });
 
   const editDrinkItem = () => {
     console.log("g");
@@ -52,7 +56,10 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
           </Select>
         </FormControl>
         <StyledBox>
-          <StyledTextField value={drinkItem.drink.title} onChange={(e) => handleChange(e)} />
+          <StyledTextField
+            value={drinkItem.drink.title}
+            onChange={(e) => handleChange(e)}
+          />
           <InputLabel>ml</InputLabel>
         </StyledBox>
       </StyledDialogContent>
