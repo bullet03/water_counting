@@ -29,7 +29,11 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
   toggleModal,
 }) => {
   const [drinksData, setDrinksData] = useState(cardsData);
-  const [drink, setDrink] = useState();
+  const [drinkItem, setDrinkItem] = useState({
+    id: 100,
+    ml: 0,
+    drink: { title: "coffee", id: 1001, imageSrc: "" },
+  });
 
   const editDrinkItem = () => {
     console.log("g");
@@ -38,7 +42,15 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
   const handleChange = (
     e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
-    console.log(e.target.value);
+    setDrinkItem({ ...drinkItem, ml: Number(e.target.value) });
+  };
+
+  const handleSelect = (e: SelectChangeEvent<string>) => {
+    setDrinkItem({
+      ...drinkItem,
+      drink: { ...drinkItem.drink, title: e.target.value },
+    });
+    console.log(drinkItem);
   };
 
   return (
@@ -48,14 +60,14 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
         <DialogContentText>Add drinking</DialogContentText>
         <FormControl>
           <InputLabel></InputLabel>
-          <Select>
+          <Select onChange={handleSelect}>
             <MenuItem>coffee</MenuItem>
             <MenuItem>tea</MenuItem>
             <MenuItem>water</MenuItem>
           </Select>
         </FormControl>
         <StyledBox>
-          <StyledTextField value={drink} onChange={(e) => handleChange(e)} />
+          <StyledTextField value={drinkItem.ml} onChange={handleChange} />
           <InputLabel>ml</InputLabel>
         </StyledBox>
       </StyledDialogContent>
