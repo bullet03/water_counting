@@ -59,11 +59,15 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
       <StyledDialogContent>
         <DialogContentText>Add drinking</DialogContentText>
         <FormControl>
-          <InputLabel></InputLabel>
-          <Select onChange={handleSelect}>
-            <MenuItem>coffee</MenuItem>
-            <MenuItem>tea</MenuItem>
-            <MenuItem>water</MenuItem>
+          <InputLabel id="drink choice"></InputLabel>
+          <Select
+            value={drinkItem.drink.title}
+            onChange={handleSelect}
+            labelId="drink choice"
+          >
+            <MenuItem value="coffee">coffee</MenuItem>
+            <MenuItem value="tea">tea</MenuItem>
+            <MenuItem value="water">water</MenuItem>
           </Select>
         </FormControl>
         <StyledBox>
