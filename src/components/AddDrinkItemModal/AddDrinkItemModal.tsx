@@ -50,7 +50,6 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
       ...drinkItem,
       drink: { ...drinkItem.drink, title: e.target.value },
     });
-    console.log(drinkItem);
   };
 
   return (
