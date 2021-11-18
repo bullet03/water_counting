@@ -30,9 +30,9 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
 }) => {
   const [drinksData, setDrinksData] = useState(cardsData);
   const [drinkItem, setDrinkItem] = useState({
-    id: 100,
+    id: nanoid(),
     ml: 0,
-    drink: { title: "coffee", id: 1001, imageSrc: "" },
+    drink: { title: "coffee", id: nanoid(), imageSrc: "" },
   });
 
   const editDrinkItem = () => {
