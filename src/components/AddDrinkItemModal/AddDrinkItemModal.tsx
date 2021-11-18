@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -10,12 +9,10 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import TextField from "@mui/material/TextField";
 import { nanoid } from "@reduxjs/toolkit";
 
 import coffee from "../../assets/images/coffee.png";
 import { cardsData } from "../../data/cardsData";
-import DrinkItemModal from "../../models/drinkItemModel";
 
 import { StyledDialogContent, StyledBox, StyledTextField } from "./styles";
 
@@ -30,13 +27,14 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
 }) => {
   const [drinksData, setDrinksData] = useState(cardsData);
   const [drinkItem, setDrinkItem] = useState({
-    id: nanoid(),
     ml: 0,
+    id: nanoid(),
     drink: { title: "coffee", id: nanoid(), imageSrc: "" },
   });
 
-  const editDrinkItem = () => {
-    console.log("g");
+  const addDrinkItem = () => {
+    setDrinksData([...drinksData, drinkItem]);
+    console.log(drinksData);
   };
 
   const handleChange = (
@@ -78,7 +76,7 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
         <Button variant="outlined" onClick={toggleModal}>
           Decline
         </Button>
-        <Button variant="outlined" onClick={editDrinkItem}>
+        <Button variant="outlined" onClick={addDrinkItem}>
           Accept
         </Button>
       </DialogActions>
