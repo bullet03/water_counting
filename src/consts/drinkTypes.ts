@@ -1,4 +1,4 @@
-export enum DrintTypes {
+export enum DrinkTypes {
     COFFEE = 'coffee',
     TEA = 'tea',
     WATER = 'water',
