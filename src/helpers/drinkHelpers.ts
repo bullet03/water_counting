@@ -3,12 +3,12 @@ import { DrinkTypes } from '../consts/drinkTypes';
 export const getDrinkNameFromType = (type: DrinkTypes) => {
     switch(type) {
         case DrinkTypes.COFFEE:
-            return 'кофе'
+            return "кофе"
         case DrinkTypes.TEA: 
-            return 'чай'
+            return "чай"
         case DrinkTypes.WATER:
-            return 'вода'
+            return "вода"
         default: 
-            return 'вода'
+            return "вода"
     }
 };

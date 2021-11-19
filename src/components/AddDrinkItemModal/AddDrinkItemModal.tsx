@@ -11,7 +11,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { nanoid } from "@reduxjs/toolkit";
 
-import coffee from "../../assets/images/coffee.png";
+import { DrinkTypes } from "../../consts/drinkTypes";
 import { cardsData } from "../../data/cardsData";
 
 import { StyledDialogContent, StyledBox, StyledTextField } from "./styles";
@@ -62,9 +62,12 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
             onChange={handleSelect}
             labelId="drink choice"
           >
-            <MenuItem value="coffee">coffee</MenuItem>
+            {Object.values(DrinkTypes).map((el) => {
+              return <MenuItem value={el}>el</MenuItem>;
+            })}
+            {/* <MenuItem value="coffee">coffee</MenuItem>
             <MenuItem value="tea">tea</MenuItem>
-            <MenuItem value="water">water</MenuItem>
+            <MenuItem value="water">water</MenuItem> */}
           </Select>
         </FormControl>
         <StyledBox>
