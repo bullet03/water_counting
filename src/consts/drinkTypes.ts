@@ -1,5 +1,5 @@
 export enum DrinkTypes {
-    COFFEE = "coffee",
-    TEA = "tea",
-    WATER = "water",
-};
+  COFFEE = "coffee",
+  TEA = "tea",
+  WATER = "water",
+}

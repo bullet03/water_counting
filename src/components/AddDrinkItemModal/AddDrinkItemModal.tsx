@@ -62,8 +62,8 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
             onChange={handleSelect}
             labelId="drink choice"
           >
-            {Object.values(DrinkTypes).map((el) => {
-              return <MenuItem value={el}>el</MenuItem>;
+            {Object.values(DrinkTypes).map((elem) => {
+              return <MenuItem value={elem}>{elem}</MenuItem>;
             })}
             {/* <MenuItem value="coffee">coffee</MenuItem>
             <MenuItem value="tea">tea</MenuItem>

@@ -11,7 +11,7 @@ module.exports = {
         }
       }
     },
-    "rules": {
+  "rules": {
       "prettier/prettier": [
         "error",
         {
@@ -50,7 +50,9 @@ module.exports = {
       "import/prefer-default-export": "off",
       "no-use-before-define": "off",
       "@typescript-eslint/no-use-before-define": ["error"],
-      "@typescript-eslint/explicit-module-boundary-types": "off"
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "no-shadow": "off",
+      "@typescript-eslint/no-shadow": ["error"],
     },
     "extends": [
       "airbnb-base",
