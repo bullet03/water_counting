@@ -13,6 +13,7 @@ import { nanoid } from "@reduxjs/toolkit";
 
 import { DrinkTypes } from "../../consts/drinkTypes";
 import { cardsData } from "../../data/cardsData";
+import { getDrinkNameFromType } from "../../helpers/drinkHelpers";
 
 import { StyledDialogContent, StyledBox, StyledTextField } from "./styles";
 
@@ -63,11 +64,10 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
             labelId="drink choice"
           >
             {Object.values(DrinkTypes).map((elem) => {
-              return <MenuItem value={elem}>{elem}</MenuItem>;
+              return (
+                <MenuItem value={elem}>{getDrinkNameFromType(elem)}</MenuItem>
+              );
             })}
-            {/* <MenuItem value="coffee">coffee</MenuItem>
-            <MenuItem value="tea">tea</MenuItem>
-            <MenuItem value="water">water</MenuItem> */}
           </Select>
         </FormControl>
         <StyledBox>
