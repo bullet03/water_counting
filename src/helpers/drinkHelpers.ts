@@ -1,8 +1,6 @@
 import { DrinkTypes } from "../consts/drinkTypes";
 
 export const getDrinkNameFromType = (drinkType: DrinkTypes) => {
-  console.log(drinkType);
-  console.log();
   switch (drinkType) {
     case DrinkTypes.COFFEE:
       return "кофе";
