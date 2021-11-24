@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { cardsData } from "../../data/cardsData";
 import DrinkItemModel from "../../models/drinkItemModel";
@@ -15,12 +15,13 @@ export const drinkItemsSlice = createSlice({
   name: "drinkItems",
   initialState,
   reducers: {
-    nothing: (state) => {
-      return state;
+    add: (state, action: PayloadAction<DrinkItemModel>) => {
+      let { drinkItems } = state;
+      drinkItems = [...state.drinkItems, action.payload];
     },
   },
 });
 
-export const { nothing } = drinkItemsSlice.actions;
+export const { add } = drinkItemsSlice.actions;
 
 export default drinkItemsSlice.reducer;
