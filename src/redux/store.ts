@@ -1,7 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 
+import drinkItemsReducer from "./reducers/drinkItemsData";
+
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    drinkItems: drinkItemsReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
