@@ -18,10 +18,14 @@ export const drinkItemsSlice = createSlice({
     add: (state, action: PayloadAction<DrinkItemModel>) => {
       let { drinkItems } = state;
       drinkItems = [...state.drinkItems, action.payload];
+      return state;
+    },
+    update: (state) => {
+      return state;
     },
   },
 });
 
-export const { add } = drinkItemsSlice.actions;
+export const { add, update } = drinkItemsSlice.actions;
 
 export default drinkItemsSlice.reducer;

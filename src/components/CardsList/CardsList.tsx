@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Grid from "@mui/material/Grid";
 import { useSelector, useDispatch } from "react-redux";
 
 import { cardsData } from "../../data/cardsData";
+import { update } from "../../redux/reducers/drinkItemsData";
 import { RootState } from "../../redux/store";
 import { Card } from "../Card";
 
@@ -23,6 +24,10 @@ export const CardsList = () => {
   const editDrinkItem = () => {
     console.log("heeey");
   };
+
+  useEffect(() => {
+    update();
+  }, [drinksData]);
 
   return (
     <Grid container spacing={2}>

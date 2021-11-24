@@ -10,10 +10,13 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { nanoid } from "@reduxjs/toolkit";
+import { useSelector, useDispatch } from "react-redux";
 
 import { DrinkTypes } from "../../consts/drinkTypes";
 import { cardsData } from "../../data/cardsData";
 import { getDrinkNameFromType } from "../../helpers/drinkHelpers";
+import { add } from "../../redux/reducers/drinkItemsData";
+import { RootState } from "../../redux/store";
 
 import { StyledDialogContent, StyledBox, StyledTextField } from "./styles";
 
@@ -26,6 +29,10 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
   isModalOpen,
   toggleModal,
 }) => {
+  const drinksDataR = useSelector(
+    (state: RootState) => state.drinkItems.drinkItems
+  );
+  const dispatch = useDispatch();
   const [drinksData, setDrinksData] = useState(cardsData);
   const [drinkItem, setDrinkItem] = useState({
     ml: 0,
@@ -35,7 +42,10 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
 
   const addDrinkItem = () => {
     setDrinksData([...drinksData, drinkItem]);
-    console.log(drinksData);
+  };
+
+  const addDrinkItemR = () => {
+    dispatch(add(drinkItem));
   };
 
   const handleChange = (
@@ -81,7 +91,7 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
         <Button variant="outlined" onClick={toggleModal}>
           Decline
         </Button>
-        <Button variant="outlined" onClick={addDrinkItem}>
+        <Button variant="outlined" onClick={addDrinkItemR}>
           Accept
         </Button>
       </DialogActions>
