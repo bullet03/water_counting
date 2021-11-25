@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { cardsData } from "../../data/cardsData";
@@ -16,8 +17,8 @@ export const drinkItemsSlice = createSlice({
   initialState,
   reducers: {
     add: (state, action: PayloadAction<DrinkItemModel>) => {
-      let { drinkItems } = state;
-      drinkItems = [...state.drinkItems, action.payload];
+      // let { drinkItems } = state;
+      state.drinkItems = [...state.drinkItems, action.payload];
       return state;
     },
     update: (state) => {

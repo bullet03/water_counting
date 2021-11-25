@@ -12,6 +12,7 @@ import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { nanoid } from "@reduxjs/toolkit";
 import { useSelector, useDispatch } from "react-redux";
 
+import coffee from "../../assets/images/coffee.png";
 import { DrinkTypes } from "../../consts/drinkTypes";
 import { cardsData } from "../../data/cardsData";
 import { getDrinkNameFromType } from "../../helpers/drinkHelpers";
@@ -37,7 +38,7 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
   const [drinkItem, setDrinkItem] = useState({
     ml: 0,
     id: nanoid(),
-    drink: { title: "coffee", id: nanoid(), imageSrc: "" },
+    drink: { title: "coffee", id: nanoid(), imageSrc: coffee },
   });
 
   const addDrinkItem = () => {
