@@ -10,14 +10,12 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { nanoid } from "@reduxjs/toolkit";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import coffee from "../../assets/images/coffee.png";
 import { DrinkTypes } from "../../consts/drinkTypes";
-import { cardsData } from "../../data/cardsData";
 import { getDrinkNameFromType } from "../../helpers/drinkHelpers";
 import { add } from "../../redux/reducers/drinkItemsData";
-import { RootState } from "../../redux/store";
 
 import { StyledDialogContent, StyledBox, StyledTextField } from "./styles";
 
@@ -30,20 +28,12 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
   isModalOpen,
   toggleModal,
 }) => {
-  const drinksDataR = useSelector(
-    (state: RootState) => state.drinkItems.drinkItems
-  );
   const dispatch = useDispatch();
-  const [drinksData, setDrinksData] = useState(cardsData);
   const [drinkItem, setDrinkItem] = useState({
     ml: 0,
     id: nanoid(),
     drink: { title: "coffee", id: nanoid(), imageSrc: coffee },
   });
-
-  const addDrinkItem = () => {
-    setDrinksData([...drinksData, drinkItem]);
-  };
 
   const addDrinkItemR = () => {
     dispatch(add(drinkItem));
