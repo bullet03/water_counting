@@ -15,7 +15,7 @@ import { useDispatch } from "react-redux";
 import coffee from "../../assets/images/coffee.png";
 import { DrinkTypes } from "../../consts/drinkTypes";
 import { getDrinkNameFromType } from "../../helpers/drinkHelpers";
-import { add } from "../../redux/reducers/drinkItemsData";
+import { addDrinkItem } from "../../redux/reducers/drinkItemsData";
 
 import { StyledDialogContent, StyledBox, StyledTextField } from "./styles";
 
@@ -36,7 +36,7 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
   });
 
   const addDrinkItemR = () => {
-    dispatch(add(drinkItem));
+    dispatch(addDrinkItem(drinkItem));
   };
 
   const handleChange = (
