@@ -4,7 +4,6 @@ import Grid from "@mui/material/Grid";
 import { useSelector, useDispatch } from "react-redux";
 
 import { cardsData } from "../../data/cardsData";
-import { update } from "../../redux/reducers/drinkItemsData";
 import { RootState } from "../../redux/store";
 import { Card } from "../Card";
 

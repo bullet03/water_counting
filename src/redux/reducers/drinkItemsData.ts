@@ -21,12 +21,9 @@ export const drinkItemsSlice = createSlice({
       state.drinkItems = [...state.drinkItems, action.payload];
       return state;
     },
-    update: (state) => {
-      return state;
-    },
   },
 });
 
-export const { add, update } = drinkItemsSlice.actions;
+export const { add } = drinkItemsSlice.actions;
 
 export default drinkItemsSlice.reducer;
