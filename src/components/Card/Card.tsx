@@ -18,13 +18,9 @@ import {
 
 interface IDefaultProps {
   drinksItem: DrinkItemModel;
-  editDrinkItem: () => void;
 }
 
-export const Card: React.FC<IDefaultProps> = ({
-  drinksItem,
-  editDrinkItem,
-}) => {
+export const Card: React.FC<IDefaultProps> = ({ drinksItem }) => {
   const dispatch = useDispatch();
   const [isInputDisabled, setIsInputDisabled] = useState(true);
 
@@ -32,7 +28,7 @@ export const Card: React.FC<IDefaultProps> = ({
 
   const editDrink = () => {
     setIsInputDisabled(!isInputDisabled);
-    editDrinkItem();
+    console.log("ggg");
   };
 
   return (
