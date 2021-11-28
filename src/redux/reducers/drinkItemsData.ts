@@ -21,9 +21,14 @@ export const drinkItemsSlice = createSlice({
       state.drinkItems = [...state.drinkItems, action.payload];
       return state;
     },
+    deleteDrinkItem: (state, action: PayloadAction<string>) => {
+      const updatedDrinkItems = state.drinkItems.filter((drinkItem) => drinkItem.id !== action.payload);
+      state.drinkItems = updatedDrinkItems;
+      return state;
+    }
   },
 });
 
-export const { addDrinkItem } = drinkItemsSlice.actions;
+export const { addDrinkItem, deleteDrinkItem } = drinkItemsSlice.actions;
 
 export default drinkItemsSlice.reducer;
