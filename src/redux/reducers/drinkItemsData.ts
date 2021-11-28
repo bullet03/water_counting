@@ -25,7 +25,11 @@ export const drinkItemsSlice = createSlice({
       const updatedDrinkItems = state.drinkItems.filter((drinkItem) => drinkItem.id !== action.payload);
       state.drinkItems = updatedDrinkItems;
       return state;
-    }
+    },
+    editDrinkItem: (state, action: PayloadAction<DrinkItemModel>) => {
+      
+      return state;
+    },
   },
 });
 
