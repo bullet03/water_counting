@@ -1,15 +1,14 @@
 import coffee from "../assets/images/coffee.png";
 import soda from "../assets/images/soda.png";
 import tea from "../assets/images/tea.png";
-import { DrinkTypes } from "../consts/drinkTypes";
 
-export const getDrinkNameFromType = (drinkType: DrinkTypes) => {
+export const getDrinkImage = (drinkType: string) => {
   switch (drinkType) {
-    case DrinkTypes.COFFEE:
+    case "coffee":
       return coffee;
-    case DrinkTypes.TEA:
+    case "soda":
       return soda;
-    case DrinkTypes.WATER:
+    case "tea":
       return tea;
     default:
       return coffee;
