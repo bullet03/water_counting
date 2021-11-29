@@ -16,12 +16,12 @@ export const drinkItemsSlice = createSlice({
   name: "drinkItems",
   initialState,
   reducers: {
-    addDrinkItem: (state, action: PayloadAction<DrinkItemModel>) => {
+    addDrinkItemAction: (state, action: PayloadAction<DrinkItemModel>) => {
       // let { drinkItems } = state;
       state.drinkItems = [...state.drinkItems, action.payload];
       return state;
     },
-    deleteDrinkItem: (state, action: PayloadAction<string>) => {
+    deleteDrinkItemAction: (state, action: PayloadAction<string>) => {
       const updatedDrinkItems = state.drinkItems.filter((drinkItem) => drinkItem.id !== action.payload);
       state.drinkItems = updatedDrinkItems;
       return state;
@@ -33,6 +33,6 @@ export const drinkItemsSlice = createSlice({
   },
 });
 
-export const { addDrinkItem, deleteDrinkItem } = drinkItemsSlice.actions;
+export const { addDrinkItemAction, deleteDrinkItemAction } = drinkItemsSlice.actions;
 
 export default drinkItemsSlice.reducer;

@@ -7,7 +7,7 @@ import TextField from "@mui/material/TextField";
 import { useDispatch } from "react-redux";
 
 import DrinkItemModel from "../../models/drinkItemModel";
-import { deleteDrinkItem } from "../../redux/reducers/drinkItemsData";
+import { deleteDrinkItemAction } from "../../redux/reducers/drinkItemsData";
 
 import {
   StyledCard,
@@ -53,7 +53,7 @@ export const Card: React.FC<IDefaultProps> = ({ drinksItem }) => {
           <EditIcon />
         </StyledIconButton>
         <StyledIconButton
-          onClick={() => dispatch(deleteDrinkItem(drinksItem.id))}
+          onClick={() => dispatch(deleteDrinkItemAction(drinksItem.id))}
         >
           <DeleteIcon />
         </StyledIconButton>

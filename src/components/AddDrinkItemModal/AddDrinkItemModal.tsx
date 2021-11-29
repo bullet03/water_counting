@@ -15,7 +15,7 @@ import { useDispatch } from "react-redux";
 import coffee from "../../assets/images/coffee.png";
 import { DrinkTypes } from "../../consts/drinkTypes";
 import { getDrinkNameFromType } from "../../helpers/drinkHelpers";
-import { addDrinkItem } from "../../redux/reducers/drinkItemsData";
+import { addDrinkItemAction } from "../../redux/reducers/drinkItemsData";
 
 import { StyledDialogContent, StyledBox, StyledTextField } from "./styles";
 
@@ -31,12 +31,17 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
   const dispatch = useDispatch();
   const [drinkItem, setDrinkItem] = useState({
     ml: 0,
-    id: nanoid(),
-    drink: { title: "coffee", id: nanoid(), imageSrc: coffee },
+    id: "",
+    drink: { title: "coffee", id: "", imageSrc: "" },
   });
 
-  const addDrinkItemR = () => {
-    dispatch(addDrinkItem(drinkItem));
+  const addDrinkItem = () => {
+    const dataItemToSend = {
+      ...drinkItem,
+      id: nanoid(),
+      drink: { ...drinkItem.drink, id: nanoid() },
+    };
+    dispatch(addDrinkItemAction(dataItemToSend));
   };
 
   const handleChange = (
@@ -85,7 +90,7 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
         <Button
           variant="outlined"
           onClick={() => {
-            addDrinkItemR();
+            addDrinkItem();
             toggleModal();
           }}
         >
