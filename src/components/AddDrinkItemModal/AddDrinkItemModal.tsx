@@ -62,7 +62,7 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
   };
 
   return (
-    <Dialog open={isModalOpen}>
+    <Dialog className="modal" open={isModalOpen}>
       <DialogTitle>Subscribe</DialogTitle>
       <StyledDialogContent>
         <DialogContentText>Add drinking</DialogContentText>
