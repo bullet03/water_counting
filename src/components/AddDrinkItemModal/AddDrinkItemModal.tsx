@@ -32,7 +32,7 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
   const [drinkItem, setDrinkItem] = useState({
     ml: 0,
     id: "",
-    drink: { title: "", id: "", imageSrc: "" },
+    drink: { title: DrinkTypes.COFFEE, id: "", imageSrc: "" },
   });
 
   const addDrinkItem = () => {
@@ -57,12 +57,12 @@ export const AddDrinkItemModal: React.FC<IProps> = ({
   const handleSelect = (e: SelectChangeEvent<string>) => {
     setDrinkItem({
       ...drinkItem,
-      drink: { ...drinkItem.drink, title: e.target.value },
+      drink: { ...drinkItem.drink, title: e.target.value as DrinkTypes },
     });
   };
 
   return (
-    <Dialog className="modal" open={isModalOpen}>
+    <Dialog className="modal" open={isModalOpen} onClose={toggleModal}>
       <DialogTitle>Subscribe</DialogTitle>
       <StyledDialogContent>
         <DialogContentText>Add drinking</DialogContentText>

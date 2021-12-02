@@ -1,5 +1,7 @@
+import { DrinkTypes } from "../consts/drinkTypes";
+
 type DrinkModel = {
-  title: string;
+  title: DrinkTypes;
   id: string;
   imageSrc: string;
 };
